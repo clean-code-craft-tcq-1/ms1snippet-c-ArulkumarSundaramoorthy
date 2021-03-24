@@ -14,3 +14,7 @@ TEST_CASE("reports error when current jumps abruptly") {
   int numOfCurReadings = sizeof(currentReadings) / sizeof(currentReadings[0]);
   REQUIRE(validateSOCreadings(currentReadings, numOfCurReadings) == 0);
 }
+
+TEST_CASE("reports error when soc with NULL value") {
+  REQUIRE(validateSOCreadings(0, 0) == 0);
+}
