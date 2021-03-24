@@ -12,15 +12,20 @@
 /* *************************************************************************
 * Function Name : CheckSuddenJump
 * Description   : Check the sudden jump
-* Arguments     : 1. value - values for compare
-*		  2. nextValue - another values for compare
+* Arguments     : 1. value - list of value
+*		  2. numOfValues - Number of values
 *	          3. maxDelta - Maximum acceptable changes
 * Returns       : 0 or 1
 * ************************************************************************* */
-int checkSuddenJump(double value, double nextValue, double maxDelta) {
+int checkSuddenJump(double* values, int numOfValues, double maxDelta) {
 	
-	if(nextValue - value > maxDelta) {
-		return 0;
+	int lastButOneIndex = numOfValues - 1;
+	for(int i = 0; i < lastButOneIndex; i++) 
+	{
+		if((values[i] - values[i + 1]) > maxDelta)) 
+		{
+			return 0;
+		}
 	}
 	
 	return 1;
@@ -34,14 +39,10 @@ int checkSuddenJump(double value, double nextValue, double maxDelta) {
 * Returns	: 0 or 1
 * ************************************************************************* */
 int validateSOCreadings(double* values, int numOfValues) {
-		int lastButOneIndex = numOfValues - 1;
-		for(int i = 0; i < lastButOneIndex; i++) 
-		{
-			if(!checkSuddenJump(values[i], values[i + 1], 0.05)) 
-			{
-				return 0;
-			}
-		}
+	if(!checkSuddenJump(values, numOfValues, 0.05)) 
+	{
+		return 0;
+	}
 	return 1;
 }
 
@@ -53,13 +54,9 @@ int validateSOCreadings(double* values, int numOfValues) {
 * Returns	: 0 or 1
 * ************************************************************************* */
 int validateCurrentreadings(double* values, int numOfValues) {
-		int lastButOneIndex = numOfValues - 1;
-		for(int i = 0; i < lastButOneIndex; i++) 
-		{
-			if(!checkSuddenJump(values[i], values[i + 1], 0.1)) 
-			{
-				return 0;
-			}
-		}
+	if(!checkSuddenJump(values, numOfValues, 0.01)) 
+	{
+		return 0;
+	}
 	return 1;
 }
