@@ -1,6 +1,15 @@
+/* *************************************************************************
+* File Name   :	sensor-validate.h
+* Description : Validate SOC & Current Readings
+* Functions	  : - 
+* ************************************************************************* */
+#ifndef SENSOR_VALIDATE_H
+#define SENSOR_VALIDATE_H
 
-int _give_me_a_good_name(double value, double nextValue, double maxDelta);
-
+/* ***************************** Prototypes ***************************** */
+int checkSuddenJump(double value, double nextValue, double maxDelta);
 int validateSOCreadings(double* values, int numOfValues);
-
 int validateCurrentreadings(double* values, int numOfValues);
+
+	
+#endif
