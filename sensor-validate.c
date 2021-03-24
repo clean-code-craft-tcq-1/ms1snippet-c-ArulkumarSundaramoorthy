@@ -56,8 +56,6 @@ int validateSOCreadings(double* values, int numOfValues) {
 * Returns	: 0 or 1
 * ************************************************************************* */
 int validateCurrentreadings(double* values, int numOfValues) {
-	if(values != NULL) 
-	{
 		int lastButOneIndex = numOfValues - 1;
 		for(int i = 0; i < lastButOneIndex; i++) 
 		{
@@ -66,6 +64,5 @@ int validateCurrentreadings(double* values, int numOfValues) {
 				return 0;
 			}
 		}
-	}
 	return 1;
 }
