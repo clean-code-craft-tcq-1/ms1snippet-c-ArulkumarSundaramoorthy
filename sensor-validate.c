@@ -18,16 +18,13 @@
 * Returns       : 0 or 1
 * ************************************************************************* */
 int checkSuddenJump(double* values, int numOfValues, double maxDelta) {
-	
-	if(values != NULL)
+		
+	int lastButOneIndex = numOfValues - 1;
+	for(int i = 0; i < lastButOneIndex; i++) 
 	{
-		int lastButOneIndex = numOfValues - 1;
-		for(int i = 0; i < lastButOneIndex; i++) 
+		if((values[i + 1] - values[i]) > maxDelta) 
 		{
-			if((values[i + 1] - values[i]) > maxDelta) 
-			{
-				return 0;
-			}
+			return 0;
 		}
 	}
 	
@@ -42,9 +39,12 @@ int checkSuddenJump(double* values, int numOfValues, double maxDelta) {
 * Returns	: 0 or 1
 * ************************************************************************* */
 int validateSOCreadings(double* values, int numOfValues) {
-	if(!checkSuddenJump(values, numOfValues, 0.05)) 
+	if(values != NULL)
 	{
-		return 0;
+		if(!checkSuddenJump(values, numOfValues, 0.05)) 
+		{
+			return 0;
+		}
 	}
 	return 1;
 }
@@ -57,9 +57,12 @@ int validateSOCreadings(double* values, int numOfValues) {
 * Returns	: 0 or 1
 * ************************************************************************* */
 int validateCurrentreadings(double* values, int numOfValues) {
-	if(!checkSuddenJump(values, numOfValues, 0.01)) 
+	if(values != NULL)
 	{
-		return 0;
+		if(!checkSuddenJump(values, numOfValues, 0.01)) 
+		{
+			return 0;
+		}
 	}
 	return 1;
 }
