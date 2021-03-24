@@ -8,6 +8,7 @@
 
 /* ***************************** Header Files ***************************** */
 #include "sensor-validate.h"
+#include "math.h"
 
 /* *************************************************************************
 * Function Name : CheckSuddenJump
