@@ -7,7 +7,7 @@
 #define SENSOR_VALIDATE_H
 
 /* ***************************** Prototypes ***************************** */
-int checkSuddenJump(double* values, int numOfValues, double maxDelta)
+int checkSuddenJump(double* values, int numOfValues, double maxDelta);
 int validateSOCreadings(double* values, int numOfValues);
 int validateCurrentreadings(double* values, int numOfValues);
 
