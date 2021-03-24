@@ -19,12 +19,15 @@
 * ************************************************************************* */
 int checkSuddenJump(double* values, int numOfValues, double maxDelta) {
 	
-	int lastButOneIndex = numOfValues - 1;
-	for(int i = 0; i < lastButOneIndex; i++) 
+	if(values != NULL)
 	{
-		if((values[i + 1] - values[i]) > maxDelta) 
+		int lastButOneIndex = numOfValues - 1;
+		for(int i = 0; i < lastButOneIndex; i++) 
 		{
-			return 0;
+			if((values[i + 1] - values[i]) > maxDelta) 
+			{
+				return 0;
+			}
 		}
 	}
 	
