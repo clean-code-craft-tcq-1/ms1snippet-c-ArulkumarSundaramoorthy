@@ -1,9 +1,9 @@
 /* *************************************************************************
 * File Name   :	sensor-validate.c
 * Description : Validate SOC & Current Readings
-* Functions	  : 1. checkSuddenJump
-*				2. validateSOCreadings
-*				3. validateCurrentreadings
+* Functions   : 1. checkSuddenJump
+*		2. validateSOCreadings
+*		3. validateCurrentreadings
 * ************************************************************************* */
 
 /* ***************************** Header Files ***************************** */
@@ -34,8 +34,6 @@ int checkSuddenJump(double value, double nextValue, double maxDelta) {
 * Returns	: 0 or 1
 * ************************************************************************* */
 int validateSOCreadings(double* values, int numOfValues) {
-	if(values != NULL) 
-	{
 		int lastButOneIndex = numOfValues - 1;
 		for(int i = 0; i < lastButOneIndex; i++) 
 		{
@@ -44,7 +42,6 @@ int validateSOCreadings(double* values, int numOfValues) {
 				return 0;
 			}
 		}
-	}
 	return 1;
 }
 
