@@ -9,7 +9,7 @@ TEST_CASE("reports error when soc jumps abruptly") {
   REQUIRE(validateSOCreadings(socReadings, numOfSocReadings) == 0);
 }
 
-TEST_CASE("reports error when soc jumps abruptly") {
+TEST_CASE("reports Success  if no jumps in SOC Reading") {
   double socReadings[] = {0.0, 0.01, 0.03, 0.04};
   int numOfSocReadings = sizeof(socReadings) / sizeof(socReadings[0]);
   REQUIRE(validateSOCreadings(socReadings, numOfSocReadings) == 1);
@@ -21,7 +21,7 @@ TEST_CASE("reports error when current jumps abruptly") {
   REQUIRE(validateCurrentreadings(currentReadings, numOfCurReadings) == 0);
 }
 
-TEST_CASE("reports error when current jumps abruptly") {
+TEST_CASE("reports Success  if no jumps in Current Reading") {
   double currentReadings[] = {0.0, 0.01, 0.015, 0.02};
   int numOfCurReadings = sizeof(currentReadings) / sizeof(currentReadings[0]);
   REQUIRE(validateCurrentreadings(currentReadings, numOfCurReadings) == 1);
