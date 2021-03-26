@@ -47,6 +47,10 @@ int validateSOCreadings(double* values, int numOfValues) {
 			return 0;
 		}
 	}
+	else
+	{
+		return 0;
+	}
 	return 1;
 }
 
@@ -64,6 +68,10 @@ int validateCurrentreadings(double* values, int numOfValues) {
 		{
 			return 0;
 		}
+	}
+	else
+	{
+		return 0;
 	}
 	return 1;
 }
