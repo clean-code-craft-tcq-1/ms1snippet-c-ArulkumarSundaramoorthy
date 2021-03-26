@@ -16,11 +16,11 @@ TEST_CASE("reports error when current jumps abruptly") {
 }
 
 TEST_CASE("reports error when Current reading with NULL value") {
-  REQUIRE(validateCurrentreadings(0, 0) == 1);
+  REQUIRE(validateCurrentreadings(0, 0) == 0);
 }
 
 TEST_CASE("reports error when soc reading with NULL value") {
-  REQUIRE(validateSOCreadings(0, 0) == 1);
+  REQUIRE(validateSOCreadings(0, 0) == 0);
 }
 
 
